@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Eltun Nəsibov — Kredit Xidməti</title>
+  <style>
+    :root{
+      --bg:#f6f9fc; --card:#ffffff; --accent:#0b63d6; --muted:#6b7280; --success:#10b981;
+      --radius:12px; --max:1100px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial; margin:0; background:var(--bg); color:#0b1220}
+    .container{max-width:var(--max); margin:28px auto; padding:18px}
+
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .brand{display:flex;gap:12px;align-items:center}
+ .logo {
+  width: 56px;       /* normal ölçü masaüstü üçün */
+  height: 56px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  width: 100%;       /* eni tam doldurur */
+  height: auto;      /* hündürlük nisbətini saxlayır */
+  max-height: 100%;  /* konteynerdən artıq hündürlük olmur */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+    h1{margin:0;font-size:18px}
+    p.lead{margin:4px 0 0;color:var(--muted);font-size:14px}
+
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:22px;align-items:center;margin-bottom:22px}
+    .card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:0 6px 18px rgba(11,19,34,0.06)}
+
+    .hero-left h2{margin:0 0 8px;font-size:22px}
+    .hero-left p{color:var(--muted);margin:0 0 14px}
+    .cta-row{display:flex;gap:12px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
+    .btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(11,99,214,0.12)}
+
+    /* Calculator */
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input[type=number], select{width:100%;padding:10px;border-radius:10px;border:1px solid #e6eef8;background:#fbfdff}
+    .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .result{font-size:20px;font-weight:700;color:var(--accent);}
+
+    /* Services */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .service{padding:12px;border-radius:10px;border:1px solid #eef5ff;background:linear-gradient(180deg,#fff,#fbfdff)}
+    .service h4{margin:0 0 6px}
+    .service p{margin:0;color:var(--muted);font-size:13px}
+
+    /* Contact */
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    textarea{width:100%;min-height:110px;padding:10px;border-radius:10px;border:1px solid #e6eef8}
+
+    footer{margin-top:22px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .services{grid-template-columns:1fr 1fr}
+      .form-row{grid-template-columns:1fr}
+    }
+    @media (max-width:520px){
+      .services{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">
+          <img src="logo.png" alt="Eltun Logo">
+        </div>
+
+        <div>
+          <h1>Eltun Nəsibov — Kredit Xidməti</h1>
+          <p class="lead">Yelo Bank fiziki şəxslərə xidmət üzrə nümayəndə • Sürətli və etibarlı kredit</p>
+        </div>
+      </div>
+
+      <nav>
+        <a class="btn" href="#basvur">Müraciət et</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left card">
+        <h2>Sənə uyğun kredit</h2>
+        <p>Nağd kreditlər və depozit təklifləri. Sizə ən uyğun həlli tapın.</p>
+        <div class="cta-row">
+          <a class="btn" id="waBtn" href="#">WhatsApp ilə yaz</a>
+          <a class="btn secondary" href="#calculator">Kredit Kalkulyatoru</a>
+        </div>
+
+        <div class="services" style="margin-top:16px">
+          <div class="service">
+            <h4>Nağd Kredit</h4>
+            <p>Tez təsdiqlənən və çevik ödəmə planları.</p>
+          </div>
+          <div class="service">
+            <h4>İstehlak Kreditləri</h4>
+            <p>Gündəlik ehtiyaclar üçün uyğun şərtlər.</p>
+          </div>
+          <div class="service">
+            <h4>Depozit</h4>
+            <p>Yüksək faizlə depozit.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3 id="calculator">Kredit Kalkulyatoru</h3>
+        <p style="color:var(--muted);font-size:13px;margin-top:6px">Məbləğ, müddət və illik faiz daxil edin — təxmini aylıq ödəniş göstəriləcək.</p>
+
+        <div style="margin-top:12px">
+          <label>Kredit məbləği (AZN)</label>
+          <input id="amount" type="number" value="1000" min="0" />
+        </div>
+        <div style="margin-top:10px" class="calc-grid">
+          <div>
+            <label>Müddət (ay)</label>
+            <input id="months" type="number" value="12" min="1" />
+          </div>
+          <div>
+            <label>İllik faiz (%)</label>
+            <input id="rate" type="number" value="18" min="0" step="0.1" />
+          </div>
+        </div>
+
+        <div style="margin-top:12px;display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div style="color:var(--muted);font-size:13px">Aylıq ödəniş</div>
+            <div class="result" id="monthly">—</div>
+          </div>
+          <button class="btn" id="calcBtn">Hesabla</button>
+        </div>
+      </aside>
+    </section>
+
+    <section class="card" style="margin-bottom:12px">
+      <h3 id="basvur">Onlayn Müraciət</h3>
+      <p style="color:var(--muted);margin-top:6px">Aşağıdakı formanı doldur və mən səninlə WhatsApp vasitəsilə əlaqə saxlayım.</p>
+
+      <form id="leadForm" style="margin-top:12px" onsubmit="return submitLead(event)">
+        <div class="form-row">
+          <div>
+            <label>Ad, Soyad</label>
+            <input id="name" type="text" required />
+          </div>
+          <div>
+            <label>Telefon nömrəsi</label>
+            <input id="phone" type="text" required />
+          </div>
+        </div>
+        <div style="margin-top:10px">
+          <label>Tələb olunan məbləğ (AZN)</label>
+          <input id="reqAmount" type="number" min="0" />
+        </div>
+        <div style="margin-top:10px">
+          <label>Qısa mesaj</label>
+          <textarea id="message">Salam, mən kreditlə maraqlanıram. </textarea>
+        </div>
+
+        <div style="display:flex;gap:10px;margin-top:12px">
+          <button class="btn" type="submit">WhatsApp ilə göndər</button>
+          <button class="btn secondary" type="button" onclick="clearForm()">Formu təmizlə</button>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Eltun — Kredi Xidməti • Mingəçevir / Bərdə </div>
+    </footer>
+  </div>
+
+  <script>
+    // NOTE: replace with your phone number in international format without +, e.g. 994501234567
+    const PHONE_NUMBER = '994559697714'; // <-- DEYİŞDİRİN
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // WhatsApp button - quick message
+  function whatsappLink(text){
+  return 'https://wa.me/' + PHONE_NUMBER + '?text=' + text;
+}
+
+    document.getElementById('waBtn').addEventListener('click', function(e){
+      e.preventDefault();
+      const txt = 'Salam, mən kredit ilə maraqlanıram.';
+      window.open(whatsappLink(txt), '_blank');
+    });
+
+    // Calculator
+    function calcMonthly(P, months, annualRate){
+      const r = annualRate / 100 / 12; // aylıq faiz dərəcəsi
+      if (r === 0) return P / months;
+      const monthly = (P * r) / (1 - Math.pow(1 + r, -months));
+      return monthly;
+    }
+
+    function showMonthly(){
+      const P = parseFloat(document.getElementById('amount').value) || 0;
+      const months = parseInt(document.getElementById('months').value) || 1;
+      const rate = parseFloat(document.getElementById('rate').value) || 0;
+      const m = calcMonthly(P, months, rate);
+      document.getElementById('monthly').textContent = m ? m.toFixed(2) + ' AZN' : '—';
+    }
+    document.getElementById('calcBtn').addEventListener('click', showMonthly);
+    showMonthly();
+
+    // Lead form -> open WhatsApp with prefilled message
+    function submitLead(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const amount = document.getElementById('reqAmount').value.trim();
+      const msg = document.getElementById('message').value.trim();
+
+      const full = `Yeni müraciət:%0AAd: ${name}%0ATelefon: ${phone}%0Aİstənilən məbləğ: ${amount}%0AMesaj: ${msg}`;
+      window.open(whatsappLink(full), '_blank');
+      return false;
+    }
+
+    function clearForm(){
+      document.getElementById('name').value='';
+      document.getElementById('phone').value='';
+      document.getElementById('reqAmount').value='';
+      document.getElementById('message').value='Salam, mən kreditlə maraqlanıram. Zəhmət olmasa kömək edin.';
+    }
+  </script>
+</body>
+</html>
